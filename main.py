@@ -40,3 +40,8 @@ class Vendedor(Pessoa):
         super().__init__(nome, idade)
         self.salario = salario
 
+
+class Compra:
+    
+    def __init__(self, vendedor, data, valor):
+        pass
