@@ -29,8 +29,9 @@ class Cliente(Pessoa):
         return self.compras[-1] if self.compras[-1] else 'não tem compras feitas'
     
     def total_compras(self):
-        valor += valor
-        return valor
+        for compra in self.compras:
+            total_compra = compra.valor + compra.valor
+        return total_compra
 
 
 class Vendedor(Pessoa):
@@ -46,3 +47,6 @@ class Compra:
         self.valor = valor
 
         
+
+if __name__ == '__main__':
+    pass
