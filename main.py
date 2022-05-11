@@ -3,7 +3,6 @@ from datetime import datetime
 
 
 class Pessoa:
-    
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
@@ -19,29 +18,31 @@ class Pessoa:
 
 
 class Cliente(Pessoa):
-    compras = []
-    
     def __init__(self, nome, idade):
         super().__init__(nome, idade)
+        self.compras = []
     
-    def registrar_comprar(self, compra):
-        pass
+    def registra_comprar(self, compra):
+        self.compras.append(Compra(compra))
     
     def get_data_ultima_compra(self):
-        pass
+        return self.compras[-1] if self.compras[-1] else 'não tem compras feitas'
     
     def total_compras(self):
-        pass
+        valor += valor
+        return valor
 
 
 class Vendedor(Pessoa):
-    
     def __init__(self, nome, idade, salario):
         super().__init__(nome, idade)
         self.salario = salario
 
 
 class Compra:
-    
-    def __init__(self, vendedor, data, valor):
-        pass
+    def __init__(self, vendedor, valor):
+        self.vendedor = vendedor
+        self.data = datetime.now()
+        self.valor = valor
+
+        
