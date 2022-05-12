@@ -1,7 +1,11 @@
 #! usr/local/bin/python3
 
-from poo.desafio_poo.pessoa import Compra
-from poo.desafio_poo.pessoa import Pessoa
+from .compra import Compra
+from .pessoa import Pessoa
+
+
+def get_compra(compra):
+    return compra.data
 
 
 class Cliente(Pessoa):
@@ -9,13 +13,14 @@ class Cliente(Pessoa):
         super().__init__(nome, idade)
         self.compras = []
     
-    def registra_comprar(self, compra):
-        self.compras.append(Compra(compra))
+    def registrar_compra(self, compra):
+        self.compras.append(compra)
     
     def get_data_ultima_compra(self):
-        return self.compras[-1] if self.compras[-1] else 'não tem compras feitas'
+        return None if not self.compras else \
+            sorted(self.compras, key=get_compra)[-1].data
     
     def total_compras(self):
         for compra in self.compras:
-            total_compra = compra.valor + compra.valor
-        return total_compra
+            compra.valor += compra.valor
+        return compra.valor

@@ -1,5 +1,5 @@
 #! usr/local/bin/python3
-from poo.desafio_poo.pessoa import Pessoa
+from .pessoa import Pessoa
 
 
 class Vendedor(Pessoa):

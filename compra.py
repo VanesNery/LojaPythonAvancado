@@ -1,9 +1,8 @@
 #! usr/local/bin/python3
-from datetime import datetime
 
 class Compra:
-    def __init__(self, vendedor, valor):
+    def __init__(self, vendedor, data, valor):
         self.vendedor = vendedor
-        self.data = datetime.now()
+        self.data = data
         self.valor = valor
 
