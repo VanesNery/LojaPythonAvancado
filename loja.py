@@ -16,8 +16,8 @@ def main():
     valor_total = cliente.total_compras()
     qtde_compras = len(cliente.compras)
     print(f'Total: {valor_total} reais em {qtde_compras} compras')
-    print(f'Última compra:\
-            {cliente.get_data_ultima_compra().strftime("%d/%m/%Y %H:%M")}')
+    data_format = cliente.get_data_ultima_compra().strftime("%d/%m/%Y %H:%M")
+    print(f'Última compra: {data_format}')
 
 
 if __name__ == '__main__':
